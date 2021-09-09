@@ -1,0 +1,23 @@
+{
+  "name": "routines",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acailly/routines.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/acailly/routines/issues"
+  },
+  "homepage": "https://github.com/acailly/routines#readme",
+  "devDependencies": {
+    "serve": "^12.0.0"
+  }
+}
