@@ -112,6 +112,11 @@ const refreshList = () => {
 
 const markAsExecuted = (taskId) => {
   localStorage.setItem(taskId, new Date());
+  confetti({
+    particleCount: 100,
+    spread: 70,
+    origin: { y: 0.6 },
+  });
   refreshList();
 };
 
