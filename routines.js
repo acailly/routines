@@ -50,8 +50,8 @@ const tasks = [
     label: "Donner le bain",
     isActive: (lastExecution, currentDate) => {
       return (
-        /*Plus de 2 jours*/ currentDate.getTime() - lastExecution.getTime() >
-        dayCount(2)
+        /*Plus de 1 jours*/ currentDate.getTime() - lastExecution.getTime() >
+        dayCount(1)
       );
     },
   },
@@ -78,12 +78,53 @@ const tasks = [
     },
   },
   {
-    id: "affaires",
+    id: "rangerAffaires",
     label: "Ranger les affaires",
     isActive: (lastExecution, currentDate) => {
       return (
         /*Plus de 3 jours*/ currentDate.getTime() - lastExecution.getTime() >
         dayCount(3)
+      );
+    },
+  },
+  {
+    id: "favoris",
+    label: "Vider les favoris",
+    isActive: (lastExecution, currentDate) => {
+      return (
+        /*Plus de 3 jours*/ currentDate.getTime() - lastExecution.getTime() >
+        dayCount(3)
+      );
+    },
+  },
+  {
+    id: "preparerAffaires",
+    label: "Préparer affaires",
+    isActive: (lastExecution, currentDate) => {
+      return (
+        /*Plus de 1 jours*/ currentDate.getTime() - lastExecution.getTime() >
+        dayCount(1)
+      );
+    },
+  },
+  {
+    id: "drapsEtTurbu",
+    label: "Changer draps et turbulette",
+    isActive: (lastExecution, currentDate) => {
+      const dayOfWeek = currentDate.getDay();
+      return (
+        /*Pas déjà fait aujourd'hui*/ !isSameDay(lastExecution, currentDate) &&
+        /*Vendredi*/ dayOfWeek === 5
+      );
+    },
+  },
+  {
+    id: "compost",
+    label: "Vider le compost",
+    isActive: (lastExecution, currentDate) => {
+      return (
+        /*Plus de 7 jours*/ currentDate.getTime() - lastExecution.getTime() >
+        dayCount(7)
       );
     },
   },
